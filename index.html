@@ -471,6 +471,15 @@ const PROJECTS = [
     credits: ["Creative Director: Adriano Lampert", "Iconography: João Pedro Sonaglio Pin", "Studio: adrilampert.co"],
     thumb: "media/guapore/thumb.jpg", cover: "media/guapore/02.jpg",
     images: ["01","03","04","05","06","07","08","09","10","11","12"].map(n => `media/guapore/${n}.jpg`) },
+  { slug: "avaliare", title: "Avaliare",
+    summary: "",
+    services: "Brand Identity, Web, Print", industry: "Psychology", year: "2021", country: "Brazil",
+    description: [
+      "Avaliare first appeared as the public face of a joint effort between Psychology and Law, known as Legal Psychology, driven by the dream of carrying out psychological assessments, forensic evaluations and clinical care. It later expanded through partnerships with other fields, including Psychopedagogy, to support care and assessments in schools, and Positive Psychology, applied in the context of organizations.",
+      "The main goal of the brand is to convey transparency, clarity and professionalism, making it a kind of blank sheet waiting to be filled with content. The symbol is built from check marks that express confidence in the success of each assessment, arranged so they form open paths to be followed."
+    ],
+    thumb: "media/avaliare/thumb.jpg", cover: "media/avaliare/06.jpg",
+    images: ["01","02","03","04","05","07"].map(n => `media/avaliare/${n}.jpg`) },
   { slug: "shadows-of-asgard", title: "Shadows of Asgard",
     summary: "Visual identity for a gaming clan of long-time friends, built on the concept of an e-sports team.",
     services: "Brand Identity, Graphic Design", industry: "Gaming & E-sports", year: "2024", country: "Brazil",
@@ -617,7 +626,7 @@ function renderProject(idx) {
   <header class="p-head">
     <div>
       <h1 class="rv-mask"><span class="ln"><span>${esc(p.title)}</span></span></h1>
-      <h2 class="p-sum rv" style="--d:.15s">${esc(p.summary)}</h2>
+      ${p.summary ? `<h2 class="p-sum rv" style="--d:.15s">${esc(p.summary)}</h2>` : ""}
     </div>
   </header>
   ${p.cover
